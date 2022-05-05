@@ -1,7 +1,8 @@
 // Example program #2 from Chapter 14 of Absolute Beginner's Guide  to C, 3rd Edition
 // File Chapter14ex2.c
-// This program will multiply two numbers and display the result for as long as the user wants.
-//Answering 'N' will break the loop.
+/* This program will multiply two numbers and display the result for as long as the user wants.
+** Answering 'N' will break the loop.
+*/
 
 #include <stdio.h>
 
@@ -13,7 +14,7 @@ main()
     //Collect user data
     printf("Would you like to see the product of two numbers? Enter Y for yes and N for no\n");
     scanf(" %c", &reply);
-    while (reply != 'N' && reply == 'Y')
+    while ((reply != 'N' || reply != 'n') && (reply == 'Y' || reply == 'y'))
         {
             do {
                 printf("Enter first number\n");
@@ -26,7 +27,7 @@ main()
                 printf("Want to try again? (Enter Y for yes and N for no\n");
                 scanf(" %c", &reply);
                 }
-            while (reply != 'N' && reply == 'Y');
+            while ((reply != 'N' || reply != 'n') && (reply == 'Y' || reply == 'y'));
         }
     //Conclude
     return 0;
